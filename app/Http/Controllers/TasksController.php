@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Task;    // 追加
+
 class TasksController extends Controller
 {
     public function index()
@@ -20,10 +22,10 @@ class TasksController extends Controller
     // getでmtasks//createにアクセスされた場合の「新規登録画面表示処理」
     public function create()
     {
-        $tasl = new Task;
+        $task = new Task;
 
         // メッセージ作成ビューを表示
-        return view('task.create', [
+        return view('tasks.create', [
             'task' => $task,
         ]);
     }
@@ -44,10 +46,10 @@ class TasksController extends Controller
     public function show($id)
     {
         // idの値でメッセージを検索して取得
-        $message = Task::findOrFail($id);
+        $task = Task::findOrFail($id);
 
         // メッセージ詳細ビューでそれを表示
-        return view('task.show', [
+        return view('tasks.show', [
             'task' => $task,
         ]);
     }
@@ -60,7 +62,7 @@ class TasksController extends Controller
 
         // メッセージ編集ビューでそれを表示
         return view('task.edit', [
-            'task' => $task,
+            'task' => $tasks,
         ]);
     }
 
