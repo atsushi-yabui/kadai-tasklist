@@ -13,7 +13,7 @@ class TasksController extends Controller
 
         // メッセージ一覧ビューでそれを表示
         return view('tasks.index', [
-            'taskstable' => $tasks,
+            'task' => $tasks,
         ]);
     }
 
@@ -23,8 +23,8 @@ class TasksController extends Controller
         $tasl = new Task;
 
         // メッセージ作成ビューを表示
-        return view('taskstable.create', [
-            'taskstable' => $task,
+        return view('task.create', [
+            'task' => $task,
         ]);
     }
 
@@ -47,8 +47,8 @@ class TasksController extends Controller
         $message = Task::findOrFail($id);
 
         // メッセージ詳細ビューでそれを表示
-        return view('taskstable.show', [
-            'taskstable' => $task,
+        return view('task.show', [
+            'task' => $task,
         ]);
     }
 
@@ -59,8 +59,8 @@ class TasksController extends Controller
         $task = Task::findOrFail($id);
 
         // メッセージ編集ビューでそれを表示
-        return view('taskstable.edit', [
-            'taskstable' => $task,
+        return view('task.edit', [
+            'task' => $task,
         ]);
     }
 

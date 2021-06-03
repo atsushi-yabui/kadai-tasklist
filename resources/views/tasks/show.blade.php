@@ -19,7 +19,7 @@
     {!! link_to_route('tasks.edit', 'このメッセージを編集', ['task' => $task->id], ['class' => 'btn btn-light']) !!}
 
     {{-- メッセージ削除フォーム --}}
-    {!! Form::model($task, ['route' => ['taskstable.destroy', $task->id], 'method' => 'delete']) !!}
+    {!! Form::model($task, ['route' => ['task.destroy', $task->id], 'method' => 'delete']) !!}
         {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
     {!! Form::close() !!}
 
