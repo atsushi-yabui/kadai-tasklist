@@ -2,6 +2,7 @@
 
 @section('content')
 
+
     <h1>課題リスト作成ページ</h1>
 
     <div class="row">
