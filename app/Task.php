@@ -9,7 +9,7 @@ class Task extends Model
     //
     
     // 参照させたいSQLのテーブル名を指定してあげる
-    protected $table = 'taskstable';
+    //protected $table = 'taskstable';
     
     
 }
