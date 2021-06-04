@@ -36,13 +36,15 @@ class TasksController extends Controller
         
         // バリデーション
         $request->validate([
+            'status' => 'required|max:10',   // 追加
             'content' => 'required|max:255',
         ]);
         
         // タスクを作成
-        $message = new Task;
-        $message->content = $request->content;
-        $message->save();
+        $task= new Task;
+        $task->status = $request->status; //追加
+        $tasl->content = $request->content;
+        $task->save();
 
         // トップページへリダイレクトさせる
         return redirect('/');
@@ -78,12 +80,14 @@ class TasksController extends Controller
         
         // バリデーション
         $request->validate([
+            'status' => 'required|max:10', //追加
             'content' => 'required|max:255',
         ]);
         
         // idの値でタスクを検索して取得
         $task= Tasl::findOrFail($id);
         // タスクを更新
+        $task->status = $request->status; //追加
         $task->content = $request->content;
         $task->save();
 
