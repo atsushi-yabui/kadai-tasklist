@@ -17,6 +17,10 @@
             <th>メッセージ</th>
             <td>{{ $task->content }}</td>
         </tr>
+        <tr>
+            <th>user_id</th>
+            <td>{{ $task->user_id }}</td>
+        </tr>
     </table>
 
     {{-- メッセージ編集ページへのリンク --}}
